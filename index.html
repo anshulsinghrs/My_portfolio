@@ -3,15 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anshul Singh | Infrastructure Design & Management</title>
-  <meta name="description" content="Anshul Singh — M.Tech Graduate from IIT Kharagpur specializing in Infrastructure Design, Urban Mobility, and Data Analytics." />
-  
+  <title>Anshul Singh | Infrastructure Design & Data Analytics</title>
+  <meta name="description" content="Anshul Singh — M.Tech graduate from IIT Kharagpur specializing in Infrastructure Design, Urban Mobility, and Data Analytics." />
+  <meta name="author" content="Anshul Singh" />
+  <meta name="theme-color" content="#0ea5e9" />
+
+  <meta property="og:title" content="Anshul Singh | Infrastructure Design & Data Analytics" />
+  <meta property="og:description" content="M.Tech IIT Kharagpur — Infrastructure Design, Urban Mobility, Data Analytics." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="profile.jpeg" />
+
+  <link rel="icon" type="image/jpeg" href="profile.jpeg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  
+
+  <script>
+    // Set theme before paint to avoid flash
+    (function () {
+      const stored = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (stored === 'dark' || (!stored && prefersDark)) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -30,18 +50,20 @@
       }
     }
   </script>
-  
+
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="font-sans bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased selection:bg-primary-200 selection:text-primary-900">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary-600 focus:text-white focus:rounded-lg">Skip to content</a>
 
   <header class="fixed top-0 left-0 right-0 z-50 glass bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
     <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
       <a href="#home" class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-indigo-600">
         Anshul Singh
       </a>
-      
+
       <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-700 dark:text-gray-300">
         <a href="#about" class="hover:text-primary-600 transition">About</a>
         <a href="#experience" class="hover:text-primary-600 transition">Experience</a>
@@ -50,35 +72,57 @@
         <a href="#awards" class="hover:text-primary-600 transition">Awards</a>
       </div>
 
-      <a href="#contact" class="px-4 py-2 rounded-full bg-primary-600 text-white text-sm font-medium hover:bg-primary-700 transition shadow-lg shadow-primary-500/30">
-        Contact Me
-      </a>
+      <div class="flex items-center gap-3">
+        <button id="theme-toggle" type="button" aria-label="Toggle dark mode"
+          class="w-9 h-9 rounded-full flex items-center justify-center text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+          <i class="fas fa-moon dark:hidden"></i>
+          <i class="fas fa-sun hidden dark:inline"></i>
+        </button>
+        <a href="#contact" class="hidden sm:inline-block px-4 py-2 rounded-full bg-primary-600 text-white text-sm font-medium hover:bg-primary-700 transition shadow-lg shadow-primary-500/30">
+          Contact Me
+        </a>
+        <button id="menu-toggle" type="button" aria-label="Open menu"
+          class="md:hidden w-9 h-9 rounded-full flex items-center justify-center text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
     </nav>
+
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 dark:border-gray-800 bg-white/95 dark:bg-gray-900/95">
+      <div class="container mx-auto px-6 py-4 flex flex-col space-y-3 text-sm font-medium text-gray-700 dark:text-gray-300">
+        <a href="#about" class="hover:text-primary-600 transition">About</a>
+        <a href="#experience" class="hover:text-primary-600 transition">Experience</a>
+        <a href="#projects" class="hover:text-primary-600 transition">Projects</a>
+        <a href="#skills" class="hover:text-primary-600 transition">Skills</a>
+        <a href="#awards" class="hover:text-primary-600 transition">Awards</a>
+        <a href="#contact" class="hover:text-primary-600 transition">Contact</a>
+      </div>
+    </div>
   </header>
 
-  <main class="pt-24">
-    
-    <section id="home" class="min-h-[80vh] flex items-center justify-center relative overflow-hidden">
-      <div class="absolute top-20 left-20 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob"></div>
-      <div class="absolute top-20 right-20 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob animation-delay-2000"></div>
-      <div class="absolute -bottom-8 left-1/2 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob animation-delay-4000"></div>
+  <main id="main" class="pt-24">
+
+    <section id="home" class="min-h-[85vh] flex items-center justify-center relative overflow-hidden">
+      <div class="absolute top-20 left-10 md:left-20 w-72 h-72 bg-purple-300 dark:bg-purple-700 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-2xl opacity-30 animate-blob"></div>
+      <div class="absolute top-20 right-10 md:right-20 w-72 h-72 bg-yellow-300 dark:bg-yellow-600 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-2xl opacity-30 animate-blob animation-delay-2000"></div>
+      <div class="absolute -bottom-8 left-1/2 w-72 h-72 bg-pink-300 dark:bg-pink-700 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-2xl opacity-30 animate-blob animation-delay-4000"></div>
 
       <div class="container mx-auto px-6 text-center z-10">
         <div class="mb-8 relative inline-block">
-          <img src="profile.jpg" alt="Anshul Singh" class="w-40 h-40 rounded-full border-4 border-white shadow-2xl object-cover mx-auto bg-gray-200">
-          <div class="absolute bottom-2 right-2 bg-green-500 w-5 h-5 rounded-full border-2 border-white"></div>
+          <img src="profile.jpeg" alt="Portrait of Anshul Singh" width="160" height="160" class="w-40 h-40 rounded-full border-4 border-white dark:border-gray-800 shadow-2xl object-cover mx-auto bg-gray-200">
+          <div class="absolute bottom-2 right-2 bg-green-500 w-5 h-5 rounded-full border-2 border-white dark:border-gray-800" title="Open to opportunities"></div>
         </div>
-        
+
         <h1 class="text-5xl md:text-7xl font-black tracking-tight mb-4">
           Anshul <span class="text-primary-600">Singh</span>
         </h1>
         <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-          Infrastructure Design & Management Professional <br>
-          <span class="text-base font-normal text-gray-500">M.Tech IIT Kharagpur '24 | Data Analytics Enthusiast</span>
+          Infrastructure Design &amp; Management Professional <br>
+          <span class="text-base font-normal text-gray-500 dark:text-gray-400">M.Tech IIT Kharagpur '24 · Data Analytics Enthusiast</span>
         </p>
 
-        <div class="flex justify-center gap-4">
-          <a href="anshulsingh_cv.pdf" target="_blank" class="px-6 py-3 rounded-xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold hover:scale-105 transition shadow-xl">
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="anshulsingh_cv.pdf" target="_blank" rel="noopener" class="px-6 py-3 rounded-xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold hover:scale-105 transition shadow-xl">
             <i class="fas fa-file-download mr-2"></i>Download CV
           </a>
           <a href="#projects" class="px-6 py-3 rounded-xl border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 font-semibold transition">
@@ -88,52 +132,52 @@
       </div>
     </section>
 
-    <section id="about" class="py-20 bg-white dark:bg-gray-800/50">
+    <section id="about" class="py-20 bg-white dark:bg-gray-800/50 reveal">
       <div class="container mx-auto px-6 max-w-5xl">
         <h2 class="text-3xl font-bold mb-12 text-center">Education</h2>
         <div class="grid md:grid-cols-2 gap-8">
-            
+
           <div class="p-6 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-700 hover:shadow-lg transition">
             <div class="flex justify-between items-start mb-4">
               <div>
                 <h3 class="text-xl font-bold">M.Tech in Infrastructure Design</h3>
                 <p class="text-primary-600 font-medium">IIT Kharagpur</p>
               </div>
-              <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-bold">8.14 CGPA</span>
+              <span class="px-3 py-1 bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300 rounded-full text-xs font-bold whitespace-nowrap">8.14 CGPA</span>
             </div>
-            <p class="text-gray-500 text-sm">2022 – 2024</p>
+            <p class="text-gray-500 dark:text-gray-400 text-sm">2022 – 2024</p>
           </div>
 
           <div class="p-6 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-700 hover:shadow-lg transition">
             <div class="flex justify-between items-start mb-4">
               <div>
                 <h3 class="text-xl font-bold">B.Tech</h3>
-                <p class="text-primary-600 font-medium">Dr. A.P.J. Abdul Kalam Technical Univ.</p>
+                <p class="text-primary-600 font-medium">Dr. A.P.J. Abdul Kalam Technical University</p>
               </div>
-              <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-bold">78%</span>
+              <span class="px-3 py-1 bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300 rounded-full text-xs font-bold whitespace-nowrap">78%</span>
             </div>
-            <p class="text-gray-500 text-sm">2022</p>
+            <p class="text-gray-500 dark:text-gray-400 text-sm">2022</p>
           </div>
 
         </div>
       </div>
     </section>
 
-    <section id="experience" class="py-20">
+    <section id="experience" class="py-20 reveal">
       <div class="container mx-auto px-6 max-w-4xl">
         <h2 class="text-3xl font-bold mb-12 text-center">Experience</h2>
-        <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-300 before:to-transparent">
-          
+        <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-300 dark:before:via-gray-700 before:to-transparent">
+
           <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-primary-500 text-slate-500 group-[.is-active]:text-slate-100 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-gray-800 bg-primary-500 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
               <i class="fas fa-flask"></i>
             </div>
             <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-md">
               <div class="flex items-center justify-between space-x-2 mb-1">
                 <h3 class="font-bold text-gray-900 dark:text-white">Research Intern</h3>
-                <time class="font-mono text-xs text-gray-500">May 2023 - July 2023</time>
+                <time class="font-mono text-xs text-gray-500 dark:text-gray-400">May – Jul 2023</time>
               </div>
-              <div class="text-primary-600 font-medium mb-2">CSIR - Central Road Research Institute (CRRI)</div>
+              <div class="text-primary-600 font-medium mb-2">CSIR – Central Road Research Institute (CRRI)</div>
               <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-400 space-y-1">
                 <li>Designed Major Agriculture Market network for Meghalaya (ITNDP).</li>
                 <li>Analyzed primary & secondary data; mapped network using QGIS.</li>
@@ -143,13 +187,13 @@
           </div>
 
           <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-blue-500 text-slate-500 group-[.is-active]:text-slate-100 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-gray-800 bg-blue-500 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
               <i class="fas fa-briefcase"></i>
             </div>
             <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-md">
               <div class="flex items-center justify-between space-x-2 mb-1">
                 <h3 class="font-bold text-gray-900 dark:text-white">Strategy Consulting Intern</h3>
-                <time class="font-mono text-xs text-gray-500">June 2023 - July 2023</time>
+                <time class="font-mono text-xs text-gray-500 dark:text-gray-400">Jun – Jul 2023</time>
               </div>
               <div class="text-primary-600 font-medium mb-2">BCG (Virtual Experience)</div>
               <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-400 space-y-1">
@@ -163,97 +207,97 @@
       </div>
     </section>
 
-    <section id="projects" class="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="projects" class="py-20 bg-gray-100 dark:bg-gray-900 reveal">
       <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold mb-12 text-center">Featured Projects</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-          <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700">
-            <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center mb-4 text-xl"><i class="fas fa-bolt"></i></div>
+          <article class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-gray-100 dark:border-gray-700">
+            <div class="w-12 h-12 bg-orange-100 text-orange-600 dark:bg-orange-900/40 dark:text-orange-300 rounded-lg flex items-center justify-center mb-4 text-xl"><i class="fas fa-bolt"></i></div>
             <h3 class="font-bold text-lg mb-2">Demand Analysis of Electric Rapid Transit (Rapid X)</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
-              M.Tech Thesis. Assessing impact of Regional Rapid Transit System on urban mobility using Fuzzy MCDM and Choice Modeling to predict mode shifts.
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+              M.Tech thesis assessing the impact of the Regional Rapid Transit System on urban mobility using Fuzzy MCDM and Choice Modeling to predict mode shifts.
             </p>
             <span class="text-xs font-semibold bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">M.Tech Thesis</span>
-          </div>
+          </article>
 
-          <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700">
-            <div class="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-lg flex items-center justify-center mb-4 text-xl"><i class="fas fa-solar-panel"></i></div>
+          <article class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-gray-100 dark:border-gray-700">
+            <div class="w-12 h-12 bg-yellow-100 text-yellow-600 dark:bg-yellow-900/40 dark:text-yellow-300 rounded-lg flex items-center justify-center mb-4 text-xl"><i class="fas fa-solar-panel"></i></div>
             <h3 class="font-bold text-lg mb-2">Photovoltaic Pavement Feasibility</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
-              Conducted economic evaluation for PV pavements on Indian roads. Calculated daily potential of 1081 kWh on Delhi-Meerut Expressway.
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+              Economic evaluation of PV pavements on Indian roads. Estimated daily potential of 1081 kWh on the Delhi–Meerut Expressway.
             </p>
             <span class="text-xs font-semibold bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Research Paper</span>
-          </div>
+          </article>
 
-          <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 dark:border-gray-700">
-            <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-4 text-xl"><i class="fas fa-chart-line"></i></div>
-            <h3 class="font-bold text-lg mb-2">Business Analysis & Process Management</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
-              Analyzed business products and goals for a styling business, defining target customers and business phases.
+          <article class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-gray-100 dark:border-gray-700">
+            <div class="w-12 h-12 bg-blue-100 text-blue-600 dark:bg-blue-900/40 dark:text-blue-300 rounded-lg flex items-center justify-center mb-4 text-xl"><i class="fas fa-chart-line"></i></div>
+            <h3 class="font-bold text-lg mb-2">Business Analysis &amp; Process Management</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+              Analyzed product strategy and goals for a styling business, defining target customers and phased growth roadmap.
             </p>
             <span class="text-xs font-semibold bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Coursera Project</span>
-          </div>
+          </article>
 
         </div>
       </div>
     </section>
 
-    <section id="skills" class="py-20">
+    <section id="skills" class="py-20 reveal">
       <div class="container mx-auto px-6 max-w-6xl">
         <div class="grid md:grid-cols-2 gap-12">
-          
+
           <div>
             <h2 class="text-3xl font-bold mb-8">Technical Skills</h2>
             <div class="space-y-4">
               <div>
-                <div class="flex justify-between mb-1"><span class="font-medium">Data Analysis (Python, R, Excel)</span><span class="text-sm text-gray-500">Advanced</span></div>
-                <div class="w-full bg-gray-200 rounded-full h-2.5"><div class="bg-primary-600 h-2.5 rounded-full" style="width: 90%"></div></div>
+                <div class="flex justify-between mb-1"><span class="font-medium">Data Analysis (Python, R, Excel)</span><span class="text-sm text-gray-500 dark:text-gray-400">Advanced</span></div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5"><div class="bg-primary-600 h-2.5 rounded-full" style="width: 90%"></div></div>
               </div>
               <div>
-                <div class="flex justify-between mb-1"><span class="font-medium">Visualization (Tableau, PowerBI)</span><span class="text-sm text-gray-500">Advanced</span></div>
-                <div class="w-full bg-gray-200 rounded-full h-2.5"><div class="bg-blue-500 h-2.5 rounded-full" style="width: 85%"></div></div>
+                <div class="flex justify-between mb-1"><span class="font-medium">Visualization (Tableau, Power BI)</span><span class="text-sm text-gray-500 dark:text-gray-400">Advanced</span></div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5"><div class="bg-blue-500 h-2.5 rounded-full" style="width: 85%"></div></div>
               </div>
               <div>
-                <div class="flex justify-between mb-1"><span class="font-medium">Databases (MySQL)</span><span class="text-sm text-gray-500">Intermediate</span></div>
-                <div class="w-full bg-gray-200 rounded-full h-2.5"><div class="bg-purple-500 h-2.5 rounded-full" style="width: 75%"></div></div>
+                <div class="flex justify-between mb-1"><span class="font-medium">Databases (MySQL)</span><span class="text-sm text-gray-500 dark:text-gray-400">Intermediate</span></div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5"><div class="bg-purple-500 h-2.5 rounded-full" style="width: 75%"></div></div>
               </div>
               <div>
-                <div class="flex justify-between mb-1"><span class="font-medium">GIS Mapping (QGIS)</span><span class="text-sm text-gray-500">Intermediate</span></div>
-                <div class="w-full bg-gray-200 rounded-full h-2.5"><div class="bg-green-500 h-2.5 rounded-full" style="width: 80%"></div></div>
+                <div class="flex justify-between mb-1"><span class="font-medium">GIS Mapping (QGIS)</span><span class="text-sm text-gray-500 dark:text-gray-400">Intermediate</span></div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5"><div class="bg-green-500 h-2.5 rounded-full" style="width: 80%"></div></div>
               </div>
             </div>
           </div>
 
           <div id="awards">
-            <h2 class="text-3xl font-bold mb-8">Awards & Achievements</h2>
+            <h2 class="text-3xl font-bold mb-8">Awards &amp; Achievements</h2>
             <div class="space-y-4">
               <div class="flex items-start">
                 <i class="fas fa-trophy text-yellow-500 mt-1 mr-4"></i>
                 <div>
-                  <h4 class="font-bold">Runner Up - National Young Researchers Conclave</h4>
-                  <p class="text-sm text-gray-600">CSIR-CRRI (June 2023)</p>
+                  <h4 class="font-bold">Runner Up — National Young Researchers Conclave</h4>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">CSIR-CRRI (June 2023)</p>
                 </div>
               </div>
               <div class="flex items-start">
                 <i class="fas fa-star text-yellow-500 mt-1 mr-4"></i>
                 <div>
-                  <h4 class="font-bold">Finalist - B-Plan Competition</h4>
-                  <p class="text-sm text-gray-600">Kshitij 2023 (IIT Kharagpur) - Rooftop Farming Pitch</p>
+                  <h4 class="font-bold">Finalist — B-Plan Competition</h4>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">Kshitij 2023, IIT Kharagpur — Rooftop Farming Pitch</p>
                 </div>
               </div>
               <div class="flex items-start">
                 <i class="fas fa-certificate text-blue-500 mt-1 mr-4"></i>
                 <div>
                   <h4 class="font-bold">National IP Awareness Training</h4>
-                  <p class="text-sm text-gray-600">Govt of India (Azadi ka Amrit Mahotsav)</p>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">Govt. of India (Azadi ka Amrit Mahotsav)</p>
                 </div>
               </div>
               <div class="flex items-start">
                 <i class="fas fa-futbol text-green-500 mt-1 mr-4"></i>
                 <div>
-                  <h4 class="font-bold">Regional Football & Chess Player</h4>
-                  <p class="text-sm text-gray-600">Kendriya Vidyalaya & All India Chess Federation</p>
+                  <h4 class="font-bold">Regional Football &amp; Chess Player</h4>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">Kendriya Vidyalaya &amp; All India Chess Federation</p>
                 </div>
               </div>
             </div>
@@ -263,18 +307,50 @@
       </div>
     </section>
 
-    <footer id="contact" class="bg-gray-900 text-white py-12">
-      <div class="container mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold mb-6">Get In Touch</h2>
+    <footer id="contact" class="bg-gray-900 text-white py-16">
+      <div class="container mx-auto px-6 text-center max-w-2xl">
+        <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
+        <p class="text-gray-400 mb-8">Open to roles in infrastructure design, urban mobility, and data analytics. Let's talk.</p>
         <div class="flex justify-center space-x-6 mb-8">
-            <a href="mailto:your.email@iitkgp.ac.in" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition"><i class="fas fa-envelope text-xl"></i></a>
-            <a href="#" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-linkedin-in text-xl"></i></a>
-            <a href="#" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition"><i class="fab fa-github text-xl"></i></a>
+            <a href="mailto:anshulsinghrs.24@kgpian.iitkgp.ac.in" aria-label="Email Anshul" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition"><i class="fas fa-envelope text-xl"></i></a>
+            <a href="https://www.linkedin.com/in/anshulsinghrs" target="_blank" rel="noopener" aria-label="LinkedIn profile" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-linkedin-in text-xl"></i></a>
+            <a href="https://github.com/anshulsinghrs" target="_blank" rel="noopener" aria-label="GitHub profile" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition"><i class="fab fa-github text-xl"></i></a>
         </div>
-        <p class="text-gray-500 text-sm">© 2024 Anshul Singh. All rights reserved.</p>
+        <p class="text-gray-500 text-sm">© <span id="year"></span> Anshul Singh. All rights reserved.</p>
       </div>
     </footer>
 
   </main>
+
+  <script>
+    // Theme toggle
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      const root = document.documentElement;
+      root.classList.toggle('dark');
+      localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+    });
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('reveal-visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
