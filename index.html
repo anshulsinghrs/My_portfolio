@@ -12,7 +12,14 @@
   <meta property="og:description" content="M.Tech IIT Kharagpur — Infrastructure Design, Urban Mobility, Data Analytics." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="profile.jpeg" />
+  <meta property="og:url" content="https://anshulsinghrs.github.io/My_portfolio/" />
 
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Anshul Singh | Infrastructure Design & Data Analytics" />
+  <meta name="twitter:description" content="M.Tech IIT Kharagpur — Infrastructure Design, Urban Mobility, Data Analytics." />
+  <meta name="twitter:image" content="profile.jpeg" />
+
+  <link rel="canonical" href="https://anshulsinghrs.github.io/My_portfolio/" />
   <link rel="icon" type="image/jpeg" href="profile.jpeg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,25 +39,7 @@
     })();
   </script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Inter', 'sans-serif'] },
-          colors: {
-            primary: {
-              50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd', 300: '#7dd3fc',
-              400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1',
-              800: '#075985', 900: '#0c4a6e',
-            }
-          }
-        }
-      }
-    }
-  </script>
-
+  <link rel="stylesheet" href="tailwind.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -65,12 +54,12 @@
       </a>
 
       <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-700 dark:text-gray-300">
-        <a href="#about" class="hover:text-primary-600 transition">About</a>
-        <a href="#experience" class="hover:text-primary-600 transition">Experience</a>
-        <a href="#projects" class="hover:text-primary-600 transition">Projects</a>
-        <a href="#github-projects" class="hover:text-primary-600 transition">Open Source</a>
-        <a href="#skills" class="hover:text-primary-600 transition">Skills</a>
-        <a href="#awards" class="hover:text-primary-600 transition">Awards</a>
+        <a href="#about" class="nav-link hover:text-primary-600 transition">About</a>
+        <a href="#experience" class="nav-link hover:text-primary-600 transition">Experience</a>
+        <a href="#projects" class="nav-link hover:text-primary-600 transition">Projects</a>
+        <a href="#github-projects" class="nav-link hover:text-primary-600 transition">Open Source</a>
+        <a href="#skills" class="nav-link hover:text-primary-600 transition">Skills</a>
+        <a href="#awards" class="nav-link hover:text-primary-600 transition">Awards</a>
       </div>
 
       <div class="flex items-center gap-3">
@@ -86,7 +75,7 @@
         <a href="#contact" class="hidden sm:inline-block px-4 py-2 rounded-full bg-primary-600 text-white text-sm font-medium hover:bg-primary-700 transition shadow-lg shadow-primary-500/30">
           Contact Me
         </a>
-        <button id="menu-toggle" type="button" aria-label="Open menu"
+        <button id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"
           class="md:hidden w-9 h-9 rounded-full flex items-center justify-center text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition">
           <i class="fas fa-bars"></i>
         </button>
@@ -177,7 +166,7 @@
         <h2 class="text-3xl font-bold mb-12 text-center">Experience</h2>
         <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-300 dark:before:via-gray-700 before:to-transparent">
 
-          <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+          <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
             <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-gray-800 bg-primary-500 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
               <i class="fas fa-flask"></i>
             </div>
@@ -195,7 +184,7 @@
             </div>
           </div>
 
-          <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+          <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
             <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-gray-800 bg-blue-500 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
               <i class="fas fa-briefcase"></i>
             </div>
@@ -296,15 +285,20 @@
             <span class="text-xs font-semibold bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded"><i class="fas fa-circle text-blue-400 text-[8px] mr-1"></i>Python</span>
           </a>
 
-          <a href="https://github.com/anshulsinghrs/vr-urban-mobility-simulator" target="_blank" rel="noopener" class="group bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-gray-100 dark:border-gray-700">
+          <div class="group bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-gray-100 dark:border-gray-700">
             <div class="flex items-center justify-between mb-4">
-              <i class="fas fa-code-branch text-primary-600 text-xl"></i>
-              <i class="fas fa-arrow-up-right-from-square text-gray-400 group-hover:text-primary-600 transition text-sm"></i>
+              <i class="fas fa-vr-cardboard text-primary-600 text-xl"></i>
+              <a href="https://github.com/anshulsinghrs/vr-urban-mobility-simulator" target="_blank" rel="noopener" aria-label="View vr-urban-mobility-simulator source on GitHub" class="text-gray-400 hover:text-primary-600 transition text-sm"><i class="fab fa-github"></i></a>
             </div>
             <h3 class="font-bold text-lg mb-2">vr-urban-mobility-simulator</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">VR-based simulator for visualizing and experiencing urban mobility scenarios.</p>
-            <span class="text-xs font-semibold bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded"><i class="fas fa-circle text-yellow-400 text-[8px] mr-1"></i>JavaScript</span>
-          </a>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Immersive VR simulator for visualizing and experiencing urban mobility scenarios in 3D.</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded"><i class="fas fa-circle text-yellow-400 text-[8px] mr-1"></i>JavaScript · VR</span>
+              <a href="https://anshulsinghrs.github.io/vr-urban-mobility-simulator/" target="_blank" rel="noopener" class="text-xs font-semibold text-primary-600 hover:underline inline-flex items-center">
+                Try VR Demo <i class="fas fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
+              </a>
+            </div>
+          </div>
 
           <a href="https://github.com/anshulsinghrs/pathpace" target="_blank" rel="noopener" class="group bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-gray-100 dark:border-gray-700">
             <div class="flex items-center justify-between mb-4">
@@ -404,11 +398,41 @@
       <div class="container mx-auto px-6 text-center max-w-2xl">
         <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
         <p class="text-gray-400 mb-8">Open to roles in infrastructure design, urban mobility, and data analytics. Let's talk.</p>
-        <div class="flex justify-center space-x-6 mb-8">
+        <div class="flex justify-center space-x-6 mb-10">
             <a href="mailto:anshulsinghrs.24@kgpian.iitkgp.ac.in" aria-label="Email Anshul" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition"><i class="fas fa-envelope text-xl"></i></a>
             <a href="https://www.linkedin.com/in/anshulsinghrs" target="_blank" rel="noopener" aria-label="LinkedIn profile" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-linkedin-in text-xl"></i></a>
             <a href="https://github.com/anshulsinghrs" target="_blank" rel="noopener" aria-label="GitHub profile" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition"><i class="fab fa-github text-xl"></i></a>
         </div>
+
+        <form action="https://formsubmit.co/anshulsinghrs.24@kgpian.iitkgp.ac.in" method="POST" class="text-left space-y-4 mb-10">
+          <input type="hidden" name="_subject" value="New message from portfolio site">
+          <input type="hidden" name="_template" value="box">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://anshulsinghrs.github.io/My_portfolio/#contact">
+          <input type="text" name="_honey" style="display:none">
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="contact-name" class="sr-only">Name</label>
+              <input id="contact-name" type="text" name="name" placeholder="Your name" required
+                class="w-full px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500">
+            </div>
+            <div>
+              <label for="contact-email" class="sr-only">Email</label>
+              <input id="contact-email" type="email" name="email" placeholder="Your email" required
+                class="w-full px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500">
+            </div>
+          </div>
+          <div>
+            <label for="contact-message" class="sr-only">Message</label>
+            <textarea id="contact-message" name="message" rows="4" placeholder="Your message" required
+              class="w-full px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500"></textarea>
+          </div>
+          <button type="submit" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-primary-600 text-white font-semibold hover:bg-primary-700 transition shadow-lg shadow-primary-500/30">
+            <i class="fas fa-paper-plane mr-2"></i>Send Message
+          </button>
+        </form>
+
         <p class="text-gray-500 text-sm">© <span id="year"></span> Anshul Singh. All rights reserved.</p>
       </div>
     </footer>
@@ -427,9 +451,26 @@
     const menuBtn = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+      const isOpen = mobileMenu.classList.toggle('hidden') === false;
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
     });
-    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+
+    // Scroll-spy nav highlighting
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = [...navLinks].map(link => document.querySelector(link.getAttribute('href')));
+    const spyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = `#${entry.target.id}`;
+          navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === id));
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    sections.forEach(section => section && spyObserver.observe(section));
 
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
