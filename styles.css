@@ -1,8 +1,26 @@
-/* Custom animations and small overrides on top of Tailwind utilities */
+/* ==========================================================================
+   Anshul Singh — Portfolio
+   Custom animations & small overrides layered on top of Tailwind utilities.
+   ========================================================================== */
 
-.animate-blob {
-  animation: blob 7s infinite;
+html { scroll-behavior: smooth; }
+
+/* Offset anchored sections so the fixed header doesn't cover headings */
+section[id],
+div[id="awards"] { scroll-margin-top: 6rem; }
+
+/* --------------------------------------------------------------------------
+   Glass / backdrop blur (used by the header)
+   -------------------------------------------------------------------------- */
+.glass {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
+
+/* --------------------------------------------------------------------------
+   Blob background animation (hero)
+   -------------------------------------------------------------------------- */
+.animate-blob { animation: blob 12s infinite ease-in-out; }
 .animation-delay-2000 { animation-delay: 2s; }
 .animation-delay-4000 { animation-delay: 4s; }
 
@@ -13,27 +31,149 @@
   100% { transform: translate(0px, 0px) scale(1); }
 }
 
-html { scroll-behavior: smooth; }
-
-.glass {
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+/* --------------------------------------------------------------------------
+   Animated gradient name in the hero
+   -------------------------------------------------------------------------- */
+.gradient-text {
+  background: linear-gradient(120deg, #0ea5e9, #6366f1, #8b5cf6, #0ea5e9);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-pan 8s ease infinite;
 }
 
-/* Scroll-reveal */
+@keyframes gradient-pan {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* --------------------------------------------------------------------------
+   Rotating role / typewriter caret in the hero
+   -------------------------------------------------------------------------- */
+.type-caret {
+  display: inline-block;
+  width: 2px;
+  margin-left: 2px;
+  background: currentColor;
+  animation: caret-blink 1s steps(1) infinite;
+}
+
+@keyframes caret-blink {
+  0%, 49%  { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* --------------------------------------------------------------------------
+   Scroll progress bar
+   -------------------------------------------------------------------------- */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  z-index: 60;
+  background: linear-gradient(90deg, #0ea5e9, #6366f1, #8b5cf6);
+  transition: width 0.1s linear;
+}
+
+/* --------------------------------------------------------------------------
+   Active nav link indicator
+   -------------------------------------------------------------------------- */
+.nav-link { position: relative; }
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, #0ea5e9, #6366f1);
+  border-radius: 9999px;
+  transition: width 0.25s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after { width: 100%; }
+.nav-link.active { color: #0284c7; }
+.dark .nav-link.active { color: #38bdf8; }
+
+/* --------------------------------------------------------------------------
+   Scroll-reveal (with optional stagger via inline --reveal-delay)
+   -------------------------------------------------------------------------- */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
+  transform: translateY(28px);
   transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  transition-delay: var(--reveal-delay, 0s);
 }
 .reveal-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Respect reduced motion */
+/* --------------------------------------------------------------------------
+   Animated skill bars
+   -------------------------------------------------------------------------- */
+.skill-bar {
+  width: 0;
+  transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* --------------------------------------------------------------------------
+   Card lift / interactive elements
+   -------------------------------------------------------------------------- */
+.card-lift { transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+.card-lift:hover { transform: translateY(-6px); }
+
+.tech-chip {
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+.tech-chip:hover { transform: translateY(-2px); }
+
+/* --------------------------------------------------------------------------
+   Back-to-top button
+   -------------------------------------------------------------------------- */
+#back-to-top {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+#back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   Custom scrollbar
+   -------------------------------------------------------------------------- */
+@media (pointer: fine) {
+  * { scrollbar-width: thin; scrollbar-color: #94a3b8 transparent; }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #38bdf8, #6366f1);
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover { background-clip: padding-box; }
+}
+
+/* --------------------------------------------------------------------------
+   Respect reduced motion
+   -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
-  .animate-blob { animation: none; }
-  .reveal { opacity: 1; transform: none; transition: none; }
   html { scroll-behavior: auto; }
+  .animate-blob,
+  .gradient-text,
+  .type-caret { animation: none; }
+  .gradient-text { background-position: 0 50%; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .skill-bar { transition: none; }
+  .card-lift:hover { transform: none; }
+  #scroll-progress { transition: none; }
 }

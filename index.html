@@ -7,11 +7,21 @@
   <meta name="description" content="Anshul Singh — M.Tech graduate from IIT Kharagpur specializing in Infrastructure Design, Urban Mobility, and Data Analytics." />
   <meta name="author" content="Anshul Singh" />
   <meta name="theme-color" content="#0ea5e9" />
+  <meta name="keywords" content="Anshul Singh, IIT Kharagpur, Infrastructure Design, Urban Mobility, Data Analytics, Transportation Planning, GIS, QGIS, Portfolio" />
+  <link rel="canonical" href="https://anshulsinghrs.github.io/my_portfolio/" />
 
+  <!-- Open Graph -->
   <meta property="og:title" content="Anshul Singh | Infrastructure Design & Data Analytics" />
   <meta property="og:description" content="M.Tech IIT Kharagpur — Infrastructure Design, Urban Mobility, Data Analytics." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="profile.jpeg" />
+  <meta property="og:url" content="https://anshulsinghrs.github.io/my_portfolio/" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Anshul Singh | Infrastructure Design & Data Analytics" />
+  <meta name="twitter:description" content="M.Tech IIT Kharagpur — Infrastructure Design, Urban Mobility, Data Analytics." />
+  <meta name="twitter:image" content="profile.jpeg" />
 
   <link rel="icon" type="image/jpeg" href="profile.jpeg" />
 
@@ -52,11 +62,35 @@
   </script>
 
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Structured data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Anshul Singh",
+    "url": "https://anshulsinghrs.github.io/my_portfolio/",
+    "image": "profile.jpeg",
+    "jobTitle": "Infrastructure Design & Management Professional",
+    "email": "mailto:anshulsinghrs.24@kgpian.iitkgp.ac.in",
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Indian Institute of Technology Kharagpur" }
+    ],
+    "knowsAbout": ["Infrastructure Design", "Urban Mobility", "Data Analytics", "Transportation Planning", "GIS"],
+    "sameAs": [
+      "https://github.com/anshulsinghrs",
+      "https://www.linkedin.com/in/anshulsinghrs"
+    ]
+  }
+  </script>
 </head>
 
 <body class="font-sans bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased selection:bg-primary-200 selection:text-primary-900">
 
-  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary-600 focus:text-white focus:rounded-lg">Skip to content</a>
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[70] focus:px-4 focus:py-2 focus:bg-primary-600 focus:text-white focus:rounded-lg">Skip to content</a>
+
+  <!-- Scroll progress bar -->
+  <div id="scroll-progress" role="presentation"></div>
 
   <header class="fixed top-0 left-0 right-0 z-50 glass bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
     <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -65,12 +99,12 @@
       </a>
 
       <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-700 dark:text-gray-300">
-        <a href="#about" class="hover:text-primary-600 transition">About</a>
-        <a href="#experience" class="hover:text-primary-600 transition">Experience</a>
-        <a href="#projects" class="hover:text-primary-600 transition">Projects</a>
-        <a href="#github-projects" class="hover:text-primary-600 transition">Open Source</a>
-        <a href="#skills" class="hover:text-primary-600 transition">Skills</a>
-        <a href="#awards" class="hover:text-primary-600 transition">Awards</a>
+        <a href="#about" class="nav-link hover:text-primary-600 transition">About</a>
+        <a href="#experience" class="nav-link hover:text-primary-600 transition">Experience</a>
+        <a href="#projects" class="nav-link hover:text-primary-600 transition">Projects</a>
+        <a href="#github-projects" class="nav-link hover:text-primary-600 transition">Open Source</a>
+        <a href="#skills" class="nav-link hover:text-primary-600 transition">Skills</a>
+        <a href="#awards" class="nav-link hover:text-primary-600 transition">Awards</a>
       </div>
 
       <div class="flex items-center gap-3">
@@ -86,7 +120,7 @@
         <a href="#contact" class="hidden sm:inline-block px-4 py-2 rounded-full bg-primary-600 text-white text-sm font-medium hover:bg-primary-700 transition shadow-lg shadow-primary-500/30">
           Contact Me
         </a>
-        <button id="menu-toggle" type="button" aria-label="Open menu"
+        <button id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"
           class="md:hidden w-9 h-9 rounded-full flex items-center justify-center text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition">
           <i class="fas fa-bars"></i>
         </button>
@@ -108,24 +142,47 @@
 
   <main id="main" class="pt-24">
 
-    <section id="home" class="min-h-[85vh] flex items-center justify-center relative overflow-hidden">
+    <section id="home" class="min-h-[88vh] flex items-center justify-center relative overflow-hidden">
       <div class="absolute top-20 left-10 md:left-20 w-72 h-72 bg-purple-300 dark:bg-purple-700 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-2xl opacity-30 animate-blob"></div>
       <div class="absolute top-20 right-10 md:right-20 w-72 h-72 bg-yellow-300 dark:bg-yellow-600 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-2xl opacity-30 animate-blob animation-delay-2000"></div>
       <div class="absolute -bottom-8 left-1/2 w-72 h-72 bg-pink-300 dark:bg-pink-700 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-2xl opacity-30 animate-blob animation-delay-4000"></div>
 
       <div class="container mx-auto px-6 text-center z-10">
-        <div class="mb-8 relative inline-block">
+        <div class="mb-6 relative inline-block">
           <img src="profile.jpeg" alt="Portrait of Anshul Singh" width="160" height="160" class="w-40 h-40 rounded-full border-4 border-white dark:border-gray-800 shadow-2xl object-cover mx-auto bg-gray-200">
           <div class="absolute bottom-2 right-2 bg-green-500 w-5 h-5 rounded-full border-2 border-white dark:border-gray-800" title="Open to opportunities"></div>
         </div>
 
+        <div class="inline-flex items-center gap-2 mb-5 px-4 py-1.5 rounded-full bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300 text-sm font-medium">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+          </span>
+          Open to opportunities
+        </div>
+
         <h1 class="text-5xl md:text-7xl font-black tracking-tight mb-4">
-          Anshul <span class="text-primary-600">Singh</span>
+          Anshul <span class="gradient-text">Singh</span>
         </h1>
-        <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-          Infrastructure Design &amp; Management Professional <br>
-          <span class="text-base font-normal text-gray-500 dark:text-gray-400">M.Tech IIT Kharagpur '24 · Data Analytics Enthusiast</span>
+
+        <p class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-3 h-8 md:h-9">
+          <span id="rotating-role" class="font-semibold text-primary-600 dark:text-primary-400"></span><span class="type-caret" aria-hidden="true">&nbsp;</span>
         </p>
+        <p class="text-base font-normal text-gray-500 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+          M.Tech IIT Kharagpur '24 · Turning infrastructure &amp; mobility data into decisions.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-3 mb-8 text-sm">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/70 dark:bg-gray-800/70 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300">
+            <i class="fas fa-map-marker-alt text-primary-500"></i> India
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/70 dark:bg-gray-800/70 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300">
+            <i class="fas fa-graduation-cap text-primary-500"></i> IIT Kharagpur
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/70 dark:bg-gray-800/70 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300">
+            <i class="fas fa-chart-line text-primary-500"></i> Data Analytics
+          </span>
+        </div>
 
         <div class="flex flex-wrap justify-center gap-4">
           <a href="anshulsingh_cv.pdf" target="_blank" rel="noopener" class="px-6 py-3 rounded-xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold hover:scale-105 transition shadow-xl">
@@ -138,15 +195,50 @@
             <i class="fab fa-github mr-2"></i>GitHub
           </a>
         </div>
+
+        <a href="#stats" aria-label="Scroll down" class="hidden md:inline-block mt-16 text-gray-400 hover:text-primary-600 transition animate-bounce">
+          <i class="fas fa-chevron-down text-xl"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Stats / quick facts -->
+    <section id="stats" class="py-14 border-y border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-800/50 reveal">
+      <div class="container mx-auto px-6 max-w-5xl">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div class="text-4xl md:text-5xl font-black text-primary-600 dark:text-primary-400"
+                 data-count-to="8.14" data-decimals="2">0</div>
+            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">M.Tech CGPA</p>
+          </div>
+          <div>
+            <div class="text-4xl md:text-5xl font-black text-primary-600 dark:text-primary-400"
+                 data-count-to="9" data-suffix="+">0</div>
+            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Projects &amp; Repos</p>
+          </div>
+          <div>
+            <div class="text-4xl md:text-5xl font-black text-primary-600 dark:text-primary-400"
+                 data-count-to="4" data-suffix="+">0</div>
+            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Awards &amp; Honors</p>
+          </div>
+          <div>
+            <div class="text-4xl md:text-5xl font-black text-primary-600 dark:text-primary-400"
+                 data-count-to="35" data-suffix=" km">0</div>
+            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Road Network Designed</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="about" class="py-20 bg-white dark:bg-gray-800/50 reveal">
       <div class="container mx-auto px-6 max-w-5xl">
-        <h2 class="text-3xl font-bold mb-12 text-center">Education</h2>
+        <h2 class="text-3xl font-bold mb-3 text-center">Education</h2>
+        <p class="text-center text-gray-500 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
+          A foundation across civil engineering and infrastructure, capped by a master's from one of India's premier institutes.
+        </p>
         <div class="grid md:grid-cols-2 gap-8">
 
-          <div class="p-6 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-700 hover:shadow-lg transition">
+          <div class="card-lift p-6 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-700 hover:shadow-lg">
             <div class="flex justify-between items-start mb-4">
               <div>
                 <h3 class="text-xl font-bold">M.Tech in Infrastructure Design</h3>
@@ -157,7 +249,7 @@
             <p class="text-gray-500 dark:text-gray-400 text-sm">2022 – 2024</p>
           </div>
 
-          <div class="p-6 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-700 hover:shadow-lg transition">
+          <div class="card-lift p-6 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-700 hover:shadow-lg">
             <div class="flex justify-between items-start mb-4">
               <div>
                 <h3 class="text-xl font-bold">B.Tech</h3>
@@ -181,7 +273,7 @@
             <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-gray-800 bg-primary-500 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
               <i class="fas fa-flask"></i>
             </div>
-            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-md">
+            <div class="card-lift w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-md">
               <div class="flex items-center justify-between space-x-2 mb-1">
                 <h3 class="font-bold text-gray-900 dark:text-white">Research Intern</h3>
                 <time class="font-mono text-xs text-gray-500 dark:text-gray-400">May – Jul 2023</time>
@@ -189,7 +281,7 @@
               <div class="text-primary-600 font-medium mb-2">CSIR – Central Road Research Institute (CRRI)</div>
               <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-400 space-y-1">
                 <li>Designed Major Agriculture Market network for Meghalaya (ITNDP).</li>
-                <li>Analyzed primary & secondary data; mapped network using QGIS.</li>
+                <li>Analyzed primary &amp; secondary data; mapped network using QGIS.</li>
                 <li>Recommended 35 km road connecting 2 regional and 379 minor markets.</li>
               </ul>
             </div>
@@ -199,7 +291,7 @@
             <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-gray-800 bg-blue-500 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
               <i class="fas fa-briefcase"></i>
             </div>
-            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-md">
+            <div class="card-lift w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-md">
               <div class="flex items-center justify-between space-x-2 mb-1">
                 <h3 class="font-bold text-gray-900 dark:text-white">Strategy Consulting Intern</h3>
                 <time class="font-mono text-xs text-gray-500 dark:text-gray-400">Jun – Jul 2023</time>
@@ -221,31 +313,42 @@
         <h2 class="text-3xl font-bold mb-12 text-center">Featured Projects</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-          <article class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-gray-100 dark:border-gray-700">
+          <article class="card-lift bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-700">
             <div class="w-12 h-12 bg-orange-100 text-orange-600 dark:bg-orange-900/40 dark:text-orange-300 rounded-lg flex items-center justify-center mb-4 text-xl"><i class="fas fa-bolt"></i></div>
             <h3 class="font-bold text-lg mb-2">Demand Analysis of Electric Rapid Transit (Rapid X)</h3>
             <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
               M.Tech thesis assessing the impact of the Regional Rapid Transit System on urban mobility using Fuzzy MCDM and Choice Modeling to predict mode shifts.
             </p>
-            <span class="text-xs font-semibold bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">M.Tech Thesis</span>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs font-semibold bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">M.Tech Thesis</span>
+              <span class="text-xs font-semibold bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Fuzzy MCDM</span>
+              <span class="text-xs font-semibold bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Choice Modeling</span>
+            </div>
           </article>
 
-          <article class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-gray-100 dark:border-gray-700">
+          <article class="card-lift bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-700">
             <div class="w-12 h-12 bg-yellow-100 text-yellow-600 dark:bg-yellow-900/40 dark:text-yellow-300 rounded-lg flex items-center justify-center mb-4 text-xl"><i class="fas fa-solar-panel"></i></div>
             <h3 class="font-bold text-lg mb-2">Photovoltaic Pavement Feasibility</h3>
             <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
               Economic evaluation of PV pavements on Indian roads. Estimated daily potential of 1081 kWh on the Delhi–Meerut Expressway.
             </p>
-            <span class="text-xs font-semibold bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Research Paper</span>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs font-semibold bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Research Paper</span>
+              <span class="text-xs font-semibold bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Feasibility</span>
+              <span class="text-xs font-semibold bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Renewables</span>
+            </div>
           </article>
 
-          <article class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-gray-100 dark:border-gray-700">
+          <article class="card-lift bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-700">
             <div class="w-12 h-12 bg-blue-100 text-blue-600 dark:bg-blue-900/40 dark:text-blue-300 rounded-lg flex items-center justify-center mb-4 text-xl"><i class="fas fa-chart-line"></i></div>
             <h3 class="font-bold text-lg mb-2">Business Analysis &amp; Process Management</h3>
             <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
               Analyzed product strategy and goals for a styling business, defining target customers and phased growth roadmap.
             </p>
-            <span class="text-xs font-semibold bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Coursera Project</span>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs font-semibold bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Coursera Project</span>
+              <span class="text-xs font-semibold bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">Strategy</span>
+            </div>
           </article>
 
         </div>
@@ -261,7 +364,7 @@
         </p>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-          <div class="group bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-gray-100 dark:border-gray-700">
+          <div class="card-lift group bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-700">
             <div class="flex items-center justify-between mb-4">
               <i class="fas fa-code-branch text-primary-600 text-xl"></i>
               <a href="https://github.com/anshulsinghrs/urban_mobility" target="_blank" rel="noopener" aria-label="View urban_mobility source on GitHub" class="text-gray-400 hover:text-primary-600 transition text-sm"><i class="fab fa-github"></i></a>
@@ -276,7 +379,7 @@
             </div>
           </div>
 
-          <a href="https://github.com/anshulsinghrs/kolkata-walkability" target="_blank" rel="noopener" class="group bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-gray-100 dark:border-gray-700">
+          <a href="https://github.com/anshulsinghrs/kolkata-walkability" target="_blank" rel="noopener" class="card-lift group bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-700">
             <div class="flex items-center justify-between mb-4">
               <i class="fas fa-code-branch text-primary-600 text-xl"></i>
               <i class="fas fa-arrow-up-right-from-square text-gray-400 group-hover:text-primary-600 transition text-sm"></i>
@@ -286,7 +389,7 @@
             <span class="text-xs font-semibold bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded"><i class="fas fa-circle text-yellow-400 text-[8px] mr-1"></i>JavaScript</span>
           </a>
 
-          <a href="https://github.com/anshulsinghrs/GSV_Image-" target="_blank" rel="noopener" class="group bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-gray-100 dark:border-gray-700">
+          <a href="https://github.com/anshulsinghrs/GSV_Image-" target="_blank" rel="noopener" class="card-lift group bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-700">
             <div class="flex items-center justify-between mb-4">
               <i class="fas fa-code-branch text-primary-600 text-xl"></i>
               <i class="fas fa-arrow-up-right-from-square text-gray-400 group-hover:text-primary-600 transition text-sm"></i>
@@ -296,7 +399,7 @@
             <span class="text-xs font-semibold bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded"><i class="fas fa-circle text-blue-400 text-[8px] mr-1"></i>Python</span>
           </a>
 
-          <a href="https://github.com/anshulsinghrs/vr-urban-mobility-simulator" target="_blank" rel="noopener" class="group bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-gray-100 dark:border-gray-700">
+          <a href="https://github.com/anshulsinghrs/vr-urban-mobility-simulator" target="_blank" rel="noopener" class="card-lift group bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-700">
             <div class="flex items-center justify-between mb-4">
               <i class="fas fa-code-branch text-primary-600 text-xl"></i>
               <i class="fas fa-arrow-up-right-from-square text-gray-400 group-hover:text-primary-600 transition text-sm"></i>
@@ -306,7 +409,7 @@
             <span class="text-xs font-semibold bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded"><i class="fas fa-circle text-yellow-400 text-[8px] mr-1"></i>JavaScript</span>
           </a>
 
-          <a href="https://github.com/anshulsinghrs/pathpace" target="_blank" rel="noopener" class="group bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-gray-100 dark:border-gray-700">
+          <a href="https://github.com/anshulsinghrs/pathpace" target="_blank" rel="noopener" class="card-lift group bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-700">
             <div class="flex items-center justify-between mb-4">
               <i class="fas fa-code-branch text-primary-600 text-xl"></i>
               <i class="fas fa-arrow-up-right-from-square text-gray-400 group-hover:text-primary-600 transition text-sm"></i>
@@ -316,7 +419,7 @@
             <span class="text-xs font-semibold bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded"><i class="fas fa-circle text-purple-400 text-[8px] mr-1"></i>Kotlin</span>
           </a>
 
-          <a href="https://github.com/anshulsinghrs/workdone-marketplace_IIT-KGP" target="_blank" rel="noopener" class="group bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 border border-gray-100 dark:border-gray-700">
+          <a href="https://github.com/anshulsinghrs/workdone-marketplace_IIT-KGP" target="_blank" rel="noopener" class="card-lift group bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-700">
             <div class="flex items-center justify-between mb-4">
               <i class="fas fa-code-branch text-primary-600 text-xl"></i>
               <i class="fas fa-arrow-up-right-from-square text-gray-400 group-hover:text-primary-600 transition text-sm"></i>
@@ -345,48 +448,60 @@
             <div class="space-y-4">
               <div>
                 <div class="flex justify-between mb-1"><span class="font-medium">Data Analysis (Python, R, Excel)</span><span class="text-sm text-gray-500 dark:text-gray-400">Advanced</span></div>
-                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5"><div class="bg-primary-600 h-2.5 rounded-full" style="width: 90%"></div></div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5"><div class="skill-bar bg-primary-600 h-2.5 rounded-full" data-width="90%"></div></div>
               </div>
               <div>
                 <div class="flex justify-between mb-1"><span class="font-medium">Visualization (Tableau, Power BI)</span><span class="text-sm text-gray-500 dark:text-gray-400">Advanced</span></div>
-                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5"><div class="bg-blue-500 h-2.5 rounded-full" style="width: 85%"></div></div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5"><div class="skill-bar bg-blue-500 h-2.5 rounded-full" data-width="85%"></div></div>
               </div>
               <div>
                 <div class="flex justify-between mb-1"><span class="font-medium">Databases (MySQL)</span><span class="text-sm text-gray-500 dark:text-gray-400">Intermediate</span></div>
-                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5"><div class="bg-purple-500 h-2.5 rounded-full" style="width: 75%"></div></div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5"><div class="skill-bar bg-purple-500 h-2.5 rounded-full" data-width="75%"></div></div>
               </div>
               <div>
                 <div class="flex justify-between mb-1"><span class="font-medium">GIS Mapping (QGIS)</span><span class="text-sm text-gray-500 dark:text-gray-400">Intermediate</span></div>
-                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5"><div class="bg-green-500 h-2.5 rounded-full" style="width: 80%"></div></div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5"><div class="skill-bar bg-green-500 h-2.5 rounded-full" data-width="80%"></div></div>
               </div>
+            </div>
+
+            <h3 class="text-lg font-bold mt-10 mb-4">Tools &amp; Technologies</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="tech-chip text-sm font-medium px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-primary-600 hover:text-white hover:border-primary-600"><i class="fab fa-python mr-1.5"></i>Python</span>
+              <span class="tech-chip text-sm font-medium px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-primary-600 hover:text-white hover:border-primary-600"><i class="fas fa-database mr-1.5"></i>MySQL</span>
+              <span class="tech-chip text-sm font-medium px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-primary-600 hover:text-white hover:border-primary-600"><i class="fas fa-map-location-dot mr-1.5"></i>QGIS</span>
+              <span class="tech-chip text-sm font-medium px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-primary-600 hover:text-white hover:border-primary-600"><i class="fas fa-chart-column mr-1.5"></i>Tableau</span>
+              <span class="tech-chip text-sm font-medium px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-primary-600 hover:text-white hover:border-primary-600"><i class="fas fa-chart-pie mr-1.5"></i>Power BI</span>
+              <span class="tech-chip text-sm font-medium px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-primary-600 hover:text-white hover:border-primary-600"><i class="fas fa-square-root-variable mr-1.5"></i>R</span>
+              <span class="tech-chip text-sm font-medium px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-primary-600 hover:text-white hover:border-primary-600"><i class="fas fa-file-excel mr-1.5"></i>Excel</span>
+              <span class="tech-chip text-sm font-medium px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-primary-600 hover:text-white hover:border-primary-600"><i class="fas fa-road mr-1.5"></i>Transport Planning</span>
             </div>
           </div>
 
           <div id="awards">
             <h2 class="text-3xl font-bold mb-8">Awards &amp; Achievements</h2>
             <div class="space-y-4">
-              <div class="flex items-start">
+              <div class="card-lift flex items-start p-4 rounded-xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700">
                 <i class="fas fa-trophy text-yellow-500 mt-1 mr-4"></i>
                 <div>
                   <h4 class="font-bold">Runner Up — National Young Researchers Conclave</h4>
                   <p class="text-sm text-gray-600 dark:text-gray-400">CSIR-CRRI (June 2023)</p>
                 </div>
               </div>
-              <div class="flex items-start">
+              <div class="card-lift flex items-start p-4 rounded-xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700">
                 <i class="fas fa-star text-yellow-500 mt-1 mr-4"></i>
                 <div>
                   <h4 class="font-bold">Finalist — B-Plan Competition</h4>
                   <p class="text-sm text-gray-600 dark:text-gray-400">Kshitij 2023, IIT Kharagpur — Rooftop Farming Pitch</p>
                 </div>
               </div>
-              <div class="flex items-start">
+              <div class="card-lift flex items-start p-4 rounded-xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700">
                 <i class="fas fa-certificate text-blue-500 mt-1 mr-4"></i>
                 <div>
                   <h4 class="font-bold">National IP Awareness Training</h4>
                   <p class="text-sm text-gray-600 dark:text-gray-400">Govt. of India (Azadi ka Amrit Mahotsav)</p>
                 </div>
               </div>
-              <div class="flex items-start">
+              <div class="card-lift flex items-start p-4 rounded-xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700">
                 <i class="fas fa-futbol text-green-500 mt-1 mr-4"></i>
                 <div>
                   <h4 class="font-bold">Regional Football &amp; Chess Player</h4>
@@ -404,6 +519,17 @@
       <div class="container mx-auto px-6 text-center max-w-2xl">
         <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
         <p class="text-gray-400 mb-8">Open to roles in infrastructure design, urban mobility, and data analytics. Let's talk.</p>
+
+        <div class="inline-flex items-center gap-2 mb-8 rounded-full bg-gray-800 border border-gray-700 pl-4 pr-2 py-2">
+          <i class="fas fa-envelope text-primary-400"></i>
+          <span class="text-sm text-gray-200 break-all">anshulsinghrs.24@kgpian.iitkgp.ac.in</span>
+          <button id="copy-email" type="button" data-email="anshulsinghrs.24@kgpian.iitkgp.ac.in"
+            class="ml-1 px-3 py-1 rounded-full bg-gray-700 hover:bg-primary-600 text-xs font-medium transition"
+            aria-label="Copy email address">
+            <i class="fas fa-copy mr-1"></i><span class="copy-label">Copy</span>
+          </button>
+        </div>
+
         <div class="flex justify-center space-x-6 mb-8">
             <a href="mailto:anshulsinghrs.24@kgpian.iitkgp.ac.in" aria-label="Email Anshul" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition"><i class="fas fa-envelope text-xl"></i></a>
             <a href="https://www.linkedin.com/in/anshulsinghrs" target="_blank" rel="noopener" aria-label="LinkedIn profile" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-linkedin-in text-xl"></i></a>
@@ -415,35 +541,183 @@
 
   </main>
 
+  <!-- Back to top -->
+  <button id="back-to-top" type="button" aria-label="Back to top"
+    class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-primary-600 text-white shadow-xl shadow-primary-500/30 hover:bg-primary-700 flex items-center justify-center">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
   <script>
-    // Theme toggle
+    // ---- Theme toggle ----
     document.getElementById('theme-toggle').addEventListener('click', () => {
       const root = document.documentElement;
       root.classList.toggle('dark');
       localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
     });
 
-    // Mobile menu
+    // ---- Mobile menu ----
     const menuBtn = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+      const isHidden = mobileMenu.classList.toggle('hidden');
+      menuBtn.setAttribute('aria-expanded', String(!isHidden));
     });
-    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
 
-    // Footer year
+    // ---- Footer year ----
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Scroll reveal
-    const observer = new IntersectionObserver((entries) => {
+    // ---- Reduced motion flag ----
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ---- Scroll reveal (+ trigger skill bars & counters) ----
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
           e.target.classList.add('reveal-visible');
-          observer.unobserve(e.target);
+          e.target.querySelectorAll('.skill-bar').forEach(bar => {
+            bar.style.width = bar.dataset.width;
+          });
+          e.target.querySelectorAll('[data-count-to]').forEach(runCounter);
+          revealObserver.unobserve(e.target);
         }
       });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ---- Animated counters ----
+    function runCounter(el) {
+      const target = parseFloat(el.dataset.countTo);
+      const decimals = parseInt(el.dataset.decimals || '0', 10);
+      const suffix = el.dataset.suffix || '';
+      if (reduceMotion) { el.textContent = target.toFixed(decimals) + suffix; return; }
+      const duration = 1400;
+      const start = performance.now();
+      function frame(now) {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+        el.textContent = (target * eased).toFixed(decimals) + suffix;
+        if (p < 1) requestAnimationFrame(frame);
+        else el.textContent = target.toFixed(decimals) + suffix;
+      }
+      requestAnimationFrame(frame);
+    }
+
+    // ---- Rotating role (typewriter) ----
+    (function () {
+      const el = document.getElementById('rotating-role');
+      if (!el) return;
+      const roles = [
+        'Infrastructure Design',
+        'Urban Mobility',
+        'Data Analytics',
+        'Transportation Planning'
+      ];
+      if (reduceMotion) { el.textContent = roles[0]; return; }
+      let roleIndex = 0, charIndex = 0, deleting = false;
+      function tick() {
+        const word = roles[roleIndex];
+        el.textContent = word.slice(0, charIndex);
+        if (!deleting && charIndex < word.length) {
+          charIndex++;
+          setTimeout(tick, 80);
+        } else if (!deleting && charIndex === word.length) {
+          deleting = true;
+          setTimeout(tick, 1600);
+        } else if (deleting && charIndex > 0) {
+          charIndex--;
+          setTimeout(tick, 40);
+        } else {
+          deleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+          setTimeout(tick, 300);
+        }
+      }
+      tick();
+    })();
+
+    // ---- Scroll progress bar ----
+    const progressBar = document.getElementById('scroll-progress');
+    function updateProgress() {
+      const scrollTop = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.width = (height > 0 ? (scrollTop / height) * 100 : 0) + '%';
+    }
+
+    // ---- Back to top ----
+    const backToTop = document.getElementById('back-to-top');
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+    function updateBackToTop() {
+      backToTop.classList.toggle('show', window.scrollY > 500);
+    }
+
+    // ---- Scroll-spy for nav ----
+    // #awards is the right column of the #skills section, so it can't scroll to
+    // the top and would steal "active" from Skills. Exclude it from the spy; its
+    // nav link still works as a jump link.
+    const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+    const spyMap = navLinks.map(link => {
+      const id = link.getAttribute('href').slice(1);
+      return { link, id, section: document.getElementById(id) };
+    }).filter(x => x.section && x.id !== 'awards');
+
+    function updateSpy() {
+      const pos = window.scrollY + window.innerHeight * 0.3;
+      let current = null;
+      let currentTop = -Infinity;
+      spyMap.forEach(({ id, section }) => {
+        // getBoundingClientRect gives the true document position even for
+        // nested elements, unlike offsetTop (relative to the offset parent).
+        const top = section.getBoundingClientRect().top + window.scrollY;
+        if (top <= pos && top >= currentTop) { current = id; currentTop = top; }
+      });
+      spyMap.forEach(({ link, id }) => {
+        link.classList.toggle('active', id === current);
+      });
+    }
+
+    // ---- Single scroll handler (throttled via rAF) ----
+    let ticking = false;
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateProgress();
+          updateBackToTop();
+          updateSpy();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    onScroll();
+
+    // ---- Copy email ----
+    const copyBtn = document.getElementById('copy-email');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', async () => {
+        const email = copyBtn.dataset.email;
+        const label = copyBtn.querySelector('.copy-label');
+        try {
+          await navigator.clipboard.writeText(email);
+        } catch (_) {
+          const ta = document.createElement('textarea');
+          ta.value = email; document.body.appendChild(ta); ta.select();
+          try { document.execCommand('copy'); } catch (e) {}
+          document.body.removeChild(ta);
+        }
+        const original = label.textContent;
+        label.textContent = 'Copied!';
+        copyBtn.classList.add('bg-primary-600');
+        setTimeout(() => { label.textContent = original; copyBtn.classList.remove('bg-primary-600'); }, 1600);
+      });
+    }
   </script>
 </body>
 </html>
